@@ -50,6 +50,7 @@ login ດ້ວຍ default authentication ເຊິ່ງສາມາດປ່�
 - add support usb camera
 - new style camera pannel
 - run with docker
+- add english version
 
 # Credit
 
