@@ -1,7 +1,19 @@
 import React, { Component } from "react";
-import { Form, Icon, Input, Button, Col, Row, Card, Alert } from "antd";
+import {
+  Form,
+  Icon,
+  Input,
+  Button,
+  Col,
+  Row,
+  Card,
+  Alert,
+  Typography,
+} from "antd";
 import { axiosInstant } from "../../service/axios";
 import LocalStorageService from "../../service/LocalStorageService";
+import face_recon_logo_2020 from "../../assets/images/security.svg";
+const { Title } = Typography;
 
 /**
  * Login page
@@ -42,9 +54,13 @@ class Login extends Component {
           xl={{ span: 6, offset: 9 }}
         >
           <div
-            style={{ width: "100%", textAlign: "center", margin: "250px 0" }}
+            className="mg-top-20 mg-bottom-20"
+            style={{ width: "100%", textAlign: "center" }}
           >
-            {/* <img src={bfh_logo_2020} alt="" width="300px" /> */}
+            <img src={face_recon_logo_2020} alt="" width="150px" />
+            <div className="mg-top-10">
+              <Title level={2}>FaceRecon dashboard</Title>
+            </div>
           </div>
           <Card title="Login">
             {this.state.visable ? (
