@@ -1,0 +1,156 @@
+#components-layout-demo-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+.logo {
+  padding: 5px;
+  background-color: #002140;
+  height: 50px;
+}
+.logo div {
+  padding: 7px;
+}
+.logo span {
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.65);
+}
+.hideName {
+  visibility: hidden;
+  display: none;
+  transition: visibility 1s, opacity 0.5s linear;
+  list-style: none;
+}
+.sub-name {
+  display: inline;
+}
+.sub-name:hover {
+  overflow: hidden;
+  color: #fff;
+}
+div.logo > div:hover {
+  background-color: transparent;
+}
+/* Padding */
+.pt-0 {
+  padding-top: 0 !important;
+}
+/* Padding */
+/* Margin */
+.mt-5 {
+  margin-top: 5s !important;
+}
+/* Margin */
+/* Border */
+.bt-1 {
+  border-top: 1px solid #fff;
+}
+.bb-1 {
+  border-bottom: 1px solid #fff;
+}
+/* Border */
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+#components-table-demo-resizable-column .react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+#components-table-demo-resizable-column .react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+  z-index: 1;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+.ant-card.card-bill .ant-card-body {
+  padding: 10px;
+}
+.float-right {
+  float: right;
+}
+.text-center {
+  text-align: center;
+}
+.profile {
+  float: right;
+  padding-right: 30px;
+}
+a {
+  font-family: "Phetsarath OT";
+}
+.wiget {
+  background-color: #fff;
+  margin: 5px auto;
+}
+.wiget > .wiget-icon {
+  max-width: 100px;
+  display: inline-block;
+  padding: 20px;
+  color: #fff;
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+.wiget-body {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.wiget-number {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+}
+.font-w {
+  color: rgba(255, 255, 255, 0.65);
+}
+.column-click {
+  cursor: pointer;
+}
+.image-container {
+  position: relative;
+}
+.overlay-image {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.3); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  height: 100%;
+}
+.image-container:hover .overlay-image {
+  opacity: 1;
+}
+.overlay-image .setting {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

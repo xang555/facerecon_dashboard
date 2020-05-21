@@ -1,0 +1,131 @@
+.powerby-label {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.4em + 0.5vw);
+}
+
+.form-label-25 {
+  font-family: Noto Sans Lao Defago;
+  /* font-size: 2.5vw */
+  font-size: calc(0.7em + 0.5vw)
+}
+.form-label-15 {
+  font-family: Noto Sans Lao Defago;
+  /* font-size: 2vw */
+  font-size: calc(0.5em + 0.5vw)
+}
+.form-label-10 {
+  font-family: Noto Sans Lao Defago;
+  /* font-size: 2vw */
+  font-size: calc(0.4em + 0.5vw)
+}
+
+.txt-steps {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.3em + 0.8vw)
+}
+
+.txt-bfh {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.3em + 0.8vw)
+}
+
+.notofont {
+  font-family: Noto Sans Lao Defago;
+}
+
+.hiddenoverflow {
+  overflow-x: hidden
+}
+
+.white-txt {
+  color: #ffffff
+}
+
+.txt-submit-btn{
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.5em + 0.7vw)
+}
+
+.form-title-red {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(1em + 1.0vw);
+  color: #ED6E26;
+}
+
+.form-title-black {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(1em + 1.0vw);
+  color: #000000;
+}
+
+.txt-alert {
+  font-family: Noto Sans Lao Defago;
+}
+
+.txt-warn {
+  font-family: Noto Sans Lao Defago;
+}
+
+.txt-header {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.2em + 0.9vw)
+}
+
+.txt-header-bold {
+  font-family: Noto Sans Lao Defago;
+  font-weight: bold;
+  font-size: calc(0.25em + 1vw)
+}
+
+.txt-details {
+  color: grey;
+}
+
+.txt-colorized {
+  font-family: Noto Sans Lao Defago;
+  color: #3183f7;
+  font-size: calc(0.2em + 1vw)
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.hidbtn {
+  display: none;
+}
+
+.showbtn {
+  display: block;
+}
+
+.txt-priceqr-bold {
+  font-weight: bold;
+  color: #3183f7;
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(1em + 1vw)
+}
+
+.txt-white {
+  color: #ffffff;
+}
+
+.event-title {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(1em + 1.5vw);
+}
+
+.event-subtitle {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.5em + 1vw);
+}
+
+.event-modal-banner {
+  width: 100px;
+  height: 80px;
+}
+
+.txt-tabs {
+  font-family: Noto Sans Lao Defago;
+  font-size: calc(0.4em + 0.5vw)
+}
