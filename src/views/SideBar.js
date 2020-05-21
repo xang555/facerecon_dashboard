@@ -40,10 +40,10 @@ class SideBar extends Component {
               </Link>
             </Menu.Item>
 
-            <Menu.Item key="5">
-              <Link to="/admin/unknown">
-                <Icon type="user"></Icon>
-                <span>Unknown People</span>
+            <Menu.Item key="8">
+              <Link to="/admin/cctv">
+                <Icon type="camera"></Icon>
+                <span>Camera</span>
               </Link>
             </Menu.Item>
 
@@ -54,17 +54,17 @@ class SideBar extends Component {
               </Link>
             </Menu.Item>
 
+            <Menu.Item key="5">
+              <Link to="/admin/unknown">
+                <Icon type="user"></Icon>
+                <span>Unknown People</span>
+              </Link>
+            </Menu.Item>
+
             <Menu.Item key="7">
               <Link to="/admin/users">
                 <Icon type="user"></Icon>
                 <span>User</span>
-              </Link>
-            </Menu.Item>
-
-            <Menu.Item key="8">
-              <Link to="/admin/cctv">
-                <Icon type="camera"></Icon>
-                <span>Camera</span>
               </Link>
             </Menu.Item>
           </Menu>

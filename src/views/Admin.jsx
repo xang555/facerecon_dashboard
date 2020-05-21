@@ -6,7 +6,6 @@ import { Switch, Route } from "react-router-dom";
 import HeaderBar from "./HeaderBar";
 import SideBar from "./SideBar";
 import Users from "./user/userIndex";
-import { Training } from "./training/Training";
 import { UnknownUser } from "./unknown_user/UnknownUser";
 import { Monitor } from "./monitor/Monitor";
 import { CCTV } from "./cctv/list";
@@ -44,7 +43,6 @@ class Admin extends Component {
                 <Switch>
                   <Route path="/admin/users" component={Users} />
                   <Route path="/admin/know" component={Know} />
-                  <Route path="/admin/training" component={Training} />
                   <Route path="/admin/unknown" component={UnknownUser} />
                   <Route path="/admin/monitor" exact component={Monitor} />
                   <Route path="/admin/cctv" component={CCTV} />

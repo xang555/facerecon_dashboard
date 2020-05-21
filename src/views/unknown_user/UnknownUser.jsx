@@ -3,6 +3,7 @@ import { Row, Col, Card, Icon, Table } from "antd";
 import UnknownSearch from "./UnknownSearch";
 import moment from "antd/node_modules/moment";
 import { endpoint } from "../../config";
+
 export const UnknownUser = () => {
   const [items, setItems] = useState([]);
   const image = (text) => {
@@ -69,7 +70,7 @@ export const UnknownUser = () => {
           title={
             <>
               {" "}
-              <Icon type="user"></Icon> Unknown User
+              <Icon type="user"></Icon> Unknown People
             </>
           }
         >

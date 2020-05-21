@@ -34,7 +34,7 @@ class Know extends Component {
   };
   showConfirm = () => {
     confirm({
-      title: "Do you want to train your model?",
+      title: "Do you want to deploy your data?",
       content: "When clicked the OK button, this dialog will be  process",
       onOk: () => {
         return axiosInstant
@@ -46,7 +46,7 @@ class Know extends Component {
             );
           })
           .catch((error) => {
-            this.openNotificationWithIcon("error", "Can not Train Model");
+            this.openNotificationWithIcon("error", "Can not deploy data");
           });
       },
       onCancel() {},
@@ -151,6 +151,7 @@ class Know extends Component {
         title: "Gender",
         dataIndex: "gender",
         key: "gender",
+        render: (val) => <span>{val === "m" ? "Male" : "Female"}</span>,
       },
       {
         title: "Images",
@@ -198,15 +199,19 @@ class Know extends Component {
       <Fragment>
         <div className="gutter-example">
           <Row gutter={24}>
-            <Col className="gutter-row" md={12} style={{ marginBottom: 20 }}>
+            <Col className="gutter-row" md={14} style={{ marginBottom: 20 }}>
               <Card
-                title="Know User"
+                title="Know People"
                 bordered={false}
                 extra={
                   <>
                     {" "}
-                    <Button type="link" onClick={(e) => this.showConfirm()}>
-                      Train
+                    <Button
+                      type="primary"
+                      icon="save"
+                      onClick={(e) => this.showConfirm()}
+                    >
+                      Deploy
                     </Button>{" "}
                   </>
                 }
@@ -226,8 +231,8 @@ class Know extends Component {
                 />
               </Card>
             </Col>
-            <Col className="gutter-row" md={12}>
-              <Card title="Add Know User" bordered={false}>
+            <Col className="gutter-row" md={10}>
+              <Card title="Add Know People" bordered={false}>
                 <AddKnow handleAddUserSubmit={this.handleAddUserSubmit} />
               </Card>
             </Col>
