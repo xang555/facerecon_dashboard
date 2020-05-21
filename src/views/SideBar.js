@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Layout, Menu, Icon } from "antd";
 import logo from "../assets/images/security.svg";
+import { SafetyOutlined, WarningOutlined } from "@ant-design/icons";
 
 const { Sider } = Layout;
 class SideBar extends Component {
@@ -49,14 +50,14 @@ class SideBar extends Component {
 
             <Menu.Item key="6">
               <Link to="/admin/know">
-                <Icon type="user"></Icon>
+                <SafetyOutlined />
                 <span>Known People</span>
               </Link>
             </Menu.Item>
 
             <Menu.Item key="5">
               <Link to="/admin/unknown">
-                <Icon type="user"></Icon>
+                <WarningOutlined />
                 <span>Unknown People</span>
               </Link>
             </Menu.Item>
