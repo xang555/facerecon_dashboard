@@ -51,6 +51,7 @@ login ດ້ວຍ default authentication ເຊິ່ງສາມາດປ່�
 - new style camera pannel
 - run with docker
 - add english version
+- write test
 
 # Credit
 
