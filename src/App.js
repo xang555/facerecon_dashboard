@@ -4,6 +4,7 @@ import { Router, Switch, Route, Redirect } from "react-router-dom";
 import store from "./store";
 import Login from "./views/auth/login";
 import Admin from "./views/Admin";
+import AppSetting from "./views/setting";
 import history from "./history";
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
             />
             <Route path="/admin" component={Admin} />
             {/* <Route component={Err404Page} /> */}
+            <Route path="/setting" component={AppSetting} />
             <Redirect to="/login" />
           </Switch>
         </Router>

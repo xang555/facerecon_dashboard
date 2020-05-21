@@ -10,9 +10,11 @@ export const Monitor = () => {
   const [restartLoading, setRestartLoading] = useState(false);
   const [imageHash, setImageHash] = useState(Date.now());
   const fetch = (url) => {
-    axiosInstant.get(url).then(({ data }) => {
-      setCameras(data);
-    });
+    axiosInstant()
+      .get(url)
+      .then(({ data }) => {
+        setCameras(data);
+      });
   };
   useEffect(() => {
     fetch(`/camera/lists`);
@@ -31,7 +33,7 @@ export const Monitor = () => {
       default:
         break;
     }
-    axiosInstant
+    axiosInstant()
       .post(`/monitor/camera/${action}/${camera_id}`)
       .then((res) => {
         setImageHash(Date.now());
@@ -57,7 +59,7 @@ export const Monitor = () => {
                   className="image-container"
                 >
                   <img
-                    src={`${endpoint}/monitor/feed_video/${
+                    src={`${endpoint()}/monitor/feed_video/${
                       camera.camera_id
                     }?token=${localStorage.getItem(
                       "access_token"

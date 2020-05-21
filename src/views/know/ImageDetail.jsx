@@ -13,7 +13,7 @@ export const ImageDetail = (props) => {
     return base64;
   };
   useEffect(() => {
-    axiosInstant
+    axiosInstant()
       .get(`/know/train/img/${id}`)
       .then((res) => {
         const images = res.data.images;
@@ -21,7 +21,7 @@ export const ImageDetail = (props) => {
       })
       .then((images) => {
         const fetchImage = images.map((image) =>
-          axiosInstant.get(`/know/train/img/${item.kp_id}/${image}`, {
+          axiosInstant().get(`/know/train/img/${item.kp_id}/${image}`, {
             responseType: "arraybuffer",
           })
         );
@@ -44,10 +44,12 @@ export const ImageDetail = (props) => {
     props.closeImageDetail();
   };
   const deleteImage = (name) => {
-    axiosInstant.delete(`/know/train/img/${item.kp_id}/${name}`).then((res) => {
-      const newImages = images.filter((image) => name !== image.name);
-      setImages(newImages);
-    });
+    axiosInstant()
+      .delete(`/know/train/img/${item.kp_id}/${name}`)
+      .then((res) => {
+        const newImages = images.filter((image) => name !== image.name);
+        setImages(newImages);
+      });
   };
   return (
     <Modal

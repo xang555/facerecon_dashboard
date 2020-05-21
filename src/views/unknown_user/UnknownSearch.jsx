@@ -14,7 +14,7 @@ class UnknownSearch extends React.Component {
     this.setState({ showClass: true });
   };
   fetchData = (startDate, endDate) => {
-    axiosInstant
+    axiosInstant()
       .get(`/access/search`, {
         params: {
           startDate,

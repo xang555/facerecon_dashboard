@@ -21,10 +21,12 @@ const _EditCamera = (props) => {
     props.form.validateFields((err, values) => {
       if (!err) {
         const data = { camera_id: props.item.camera_id, ...values };
-        axiosInstant.patch("/camera/update", data).then((res) => {
-          props.form.resetFields();
-          props.handleInsert();
-        });
+        axiosInstant()
+          .patch("/camera/update", data)
+          .then((res) => {
+            props.form.resetFields();
+            props.handleInsert();
+          });
       }
     });
   };

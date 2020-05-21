@@ -13,7 +13,7 @@ export const CCTV = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const fetchData = (url) => {
-    axiosInstant
+    axiosInstant()
       .get(url)
       .then((res) => {
         setItems(res.data);
@@ -40,7 +40,7 @@ export const CCTV = () => {
       okType: "danger",
       cancelText: "No",
       onOk() {
-        axiosInstant
+        axiosInstant()
           .delete("/camera/delete", {
             data: {
               camera_id: item.camera_id,

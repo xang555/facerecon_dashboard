@@ -9,7 +9,7 @@ export const UnknownUser = () => {
   const image = (text) => {
     return (
       <img
-        src={`${endpoint}/access/image/${text}?token=${localStorage.getItem(
+        src={`${endpoint()}/access/image/${text}?token=${localStorage.getItem(
           "access_token"
         )}`}
         alt=""

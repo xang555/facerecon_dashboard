@@ -37,7 +37,7 @@ class Know extends Component {
       title: "Do you want to deploy your data?",
       content: "When clicked the OK button, this dialog will be  process",
       onOk: () => {
-        return axiosInstant
+        return axiosInstant()
           .post(`/know/train/run`)
           .then((res) => {
             this.openNotificationWithIcon(
@@ -59,7 +59,7 @@ class Know extends Component {
     this.setState({ showImageDetail: false });
   };
   fetchData = (url) => {
-    axiosInstant
+    axiosInstant()
       .get(url)
       .then((response) => {
         this.setState({ items: response.data });
@@ -72,7 +72,7 @@ class Know extends Component {
     this.fetchData("/know/all");
   }
   handleAddUserSubmit = ({ name, lname, sex, age }) => {
-    axiosInstant
+    axiosInstant()
       .put("/know/add", {
         name,
         lname,
@@ -85,7 +85,7 @@ class Know extends Component {
       .catch((error) => {});
   };
   handleUpdate = ({ kp_id, name, lname, sex, age }) => {
-    axiosInstant
+    axiosInstant()
       .patch(`/know/update`, {
         kp_id,
         name,
@@ -112,7 +112,7 @@ class Know extends Component {
     });
   };
   deleteItem = (item) => {
-    axiosInstant
+    axiosInstant()
       .delete("/know/delete", {
         data: {
           kp_id: item.kp_id,

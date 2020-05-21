@@ -18,7 +18,7 @@ class Users extends Component {
    * fetch user
    */
   fetchData = (url) => {
-    axiosInstant
+    axiosInstant()
       .get(url)
       .then((response) => {
         this.setState({ items: response.data });
@@ -36,7 +36,7 @@ class Users extends Component {
    * add user
    */
   handleAddUserSubmit = ({ username, password }) => {
-    axiosInstant
+    axiosInstant()
       .put("/user/add", {
         username,
         password,
@@ -53,7 +53,7 @@ class Users extends Component {
    * update user
    */
   handleUpdate = ({ user_id, level, username, password }) => {
-    axiosInstant
+    axiosInstant()
       .patch(`/user/update`, {
         username,
         password,
@@ -73,7 +73,7 @@ class Users extends Component {
    * delete user
    */
   deleteUser = (item) => {
-    axiosInstant
+    axiosInstant()
       .delete("/user/delete", {
         data: {
           user_id: item.user_id,

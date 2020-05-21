@@ -1,25 +1,24 @@
 import React, { Component } from "react";
 import {
   Form,
-  Icon,
+  notification,
   Input,
   Button,
   Col,
   Row,
   Card,
-  Alert,
   Typography,
 } from "antd";
-import { Link } from "react-router-dom";
-import { axiosInstant } from "../../service/axios";
 import LocalStorageService from "../../service/LocalStorageService";
 import face_recon_logo_2020 from "../../assets/images/security.svg";
+import { ApiOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 const { Title } = Typography;
 
 /**
- * Login page
+ * App setting page
  */
-class Login extends Component {
+class AppSetting extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -30,16 +29,13 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        axiosInstant()
-          .post("/login", values)
-          .then((response) => {
-            localStorage.setItem("username", values.username);
-            LocalStorageService.setToken(response.data);
-            this.props.history.push("/admin/monitor");
-          })
-          .catch((e) => {
-            this.setState({ visable: true });
+        LocalStorageService.setApiUrl(values.api_url);
+        setTimeout(() => {
+          notification.success({
+            message: "App Setting",
+            description: "Save Setting Success!",
           });
+        }, 1000);
       }
     });
   };
@@ -63,48 +59,21 @@ class Login extends Component {
               <Title level={2}>FaceRecon dashboard</Title>
             </div>
           </div>
-          <Card title="Login">
-            {this.state.visable ? (
-              <Alert
-                message="Username or Password not correct"
-                type="error"
-                closable
-                afterClose={() => this.setState({ visable: false })}
-              />
-            ) : null}
+          <Card title="App Setting">
             <Form
               onSubmit={this.handleSubmit}
               className="login-form"
               style={{ top: "50%" }}
             >
               <Form.Item>
-                {getFieldDecorator("username", {
-                  rules: [{ required: true, message: "Please input Email!" }],
+                {getFieldDecorator("api_url", {
+                  rules: [{ required: true, message: "Please input Api Url!" }],
                 })(
                   <Input
                     prefix={
-                      <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                      <ApiOutlined style={{ color: "rgba(0,0,0,.25)" }} />
                     }
-                    placeholder="UserName"
-                  />
-                )}
-              </Form.Item>
-              <Form.Item>
-                {getFieldDecorator("password", {
-                  rules: [
-                    { required: true, message: "Password is invalid!" },
-                    {
-                      min: 8,
-                      message: "password must have more than 8 characters",
-                    },
-                  ],
-                })(
-                  <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
-                    type="password"
-                    placeholder="Password"
+                    placeholder="API URL http://localhost:8080"
                   />
                 )}
               </Form.Item>
@@ -115,13 +84,13 @@ class Login extends Component {
                   className="login-form-button"
                   block
                 >
-                  Log in
+                  Save
                 </Button>
               </Form.Item>
             </Form>
           </Card>
           <div className="mg-top-10" style={{ textAlign: "center" }}>
-            <Link to="/setting">App setting</Link>
+            <Link to="/login">Sign In</Link>
           </div>
         </Col>
       </Row>
@@ -129,4 +98,4 @@ class Login extends Component {
   }
 }
 
-export default Form.create()(Login);
+export default Form.create()(AppSetting);

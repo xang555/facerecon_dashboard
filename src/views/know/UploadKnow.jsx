@@ -44,7 +44,7 @@ const _UploadKnow = (props) => {
     fileList.forEach((element) => {
       formData.append("train_img", element);
     });
-    axiosInstant({
+    axiosInstant()({
       method: "post",
       url: `/know/train/upload/${props.item.kp_id}`,
       data: formData,

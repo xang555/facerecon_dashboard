@@ -20,10 +20,12 @@ const _AddCamera = (props) => {
     e.preventDefault();
     props.form.validateFields((err, values) => {
       if (!err) {
-        axiosInstant.put("/camera/add", values).then((res) => {
-          props.form.resetFields();
-          props.handleInsert();
-        });
+        axiosInstant()
+          .put("/camera/add", values)
+          .then((res) => {
+            props.form.resetFields();
+            props.handleInsert();
+          });
       }
     });
   };
