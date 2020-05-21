@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from "react";
-import { Card, Row, Col, Table, Modal, Button } from "antd";
+import { Card, Row, Col, Table, Modal, Button, Divider, message } from "antd";
 import AddUser from "./AddUser";
 import { axiosInstant } from "../../service/axios";
 import EditUser from "./EditUser";
+const { confirm } = Modal;
+
 class Users extends Component {
   constructor() {
     super();
@@ -12,6 +14,9 @@ class Users extends Component {
       userData: null,
     };
   }
+  /**
+   * fetch user
+   */
   fetchData = (url) => {
     axiosInstant
       .get(url)
@@ -19,12 +24,17 @@ class Users extends Component {
         this.setState({ items: response.data });
       })
       .catch((err) => {
-        // TODO: fixxx
+        message.error("Fetch users Failed!");
       });
   };
+
   componentDidMount() {
     this.fetchData("/user");
   }
+
+  /**
+   * add user
+   */
   handleAddUserSubmit = ({ username, password }) => {
     axiosInstant
       .put("/user/add", {
@@ -34,8 +44,14 @@ class Users extends Component {
       .then((response) => {
         this.fetchData("/user");
       })
-      .catch((error) => {});
+      .catch((error) => {
+        message.error("Add user Failed!");
+      });
   };
+
+  /**
+   * update user
+   */
   handleUpdate = ({ user_id, level, username, password }) => {
     axiosInstant
       .patch(`/user/update`, {
@@ -48,8 +64,46 @@ class Users extends Component {
         this.fetchData("/user");
         this.setState({ visible: false });
       })
-      .catch((err) => {});
+      .catch((err) => {
+        message.error("Update user Failed!");
+      });
   };
+
+  /**
+   * delete user
+   */
+  deleteUser = (item) => {
+    axiosInstant
+      .delete("/user/delete", {
+        data: {
+          user_id: item.user_id,
+        },
+      })
+      .then(() => {
+        this.fetchData("/user");
+      })
+      .catch(() => {
+        message.error("Delete user Failed!");
+      });
+  };
+
+  /**
+   * show delete dialog
+   */
+  showDeleteConfirm(item) {
+    confirm({
+      title: "Are you sure delete this User?",
+      icon: "exclamation",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      onOk: () => {
+        this.deleteUser(item);
+      },
+      onCancel() {},
+    });
+  }
+
   showModal = (e, userData) => {
     e.preventDefault();
     this.setState({
@@ -57,11 +111,13 @@ class Users extends Component {
       userData: userData,
     });
   };
+
   handleCancel = () => {
     this.setState({
       visible: false,
     });
   };
+
   render() {
     const columns = [
       {
@@ -78,6 +134,10 @@ class Users extends Component {
             <span>
               <Button type="link" onClick={(e) => this.showModal(e, item)}>
                 Edit
+              </Button>
+              <Divider type="vertical" />
+              <Button type="link" onClick={(e) => this.showDeleteConfirm(item)}>
+                Delete
               </Button>
             </span>
           );
