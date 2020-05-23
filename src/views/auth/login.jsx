@@ -92,11 +92,7 @@ class Login extends Component {
               <Form.Item>
                 {getFieldDecorator("password", {
                   rules: [
-                    { required: true, message: "Password is invalid!" },
-                    {
-                      min: 8,
-                      message: "password must have more than 8 characters",
-                    },
+                    { required: true, message: "Please input Password!" },
                   ],
                 })(
                   <Input
