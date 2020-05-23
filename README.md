@@ -2,7 +2,7 @@
 
 Web Application ສຳລັບໃຊ້ງານ [FaceRecon API](https://github.com/xang555/face_recon)
 
-![Demo](img/monitor.png)
+![Demo](img/my_monitor.png)
 
 # Install
 
