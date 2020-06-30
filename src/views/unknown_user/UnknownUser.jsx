@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Card, Icon, Table } from "antd";
 import UnknownSearch from "./UnknownSearch";
-import moment from "antd/node_modules/moment";
+import moment from "moment";
 import { endpoint } from "../../config";
 
 export const UnknownUser = () => {
