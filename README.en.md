@@ -1,6 +1,6 @@
-- [English document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.en.md)
-- [Lao document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.md)
-
+[Lao document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.md)
+ | [English document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.en.md)
+ 
 # FaceRecon Dashboard
 
 Web application for [FaceRecon API](https://github.com/xang555/face_recon)
