@@ -1,3 +1,6 @@
+- [English document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.en.md)
+- [Lao document version](https://github.com/xang555/facerecon_dashboard/blob/master/README.md)
+
 # FaceRecon dashboard
 
 Web Application ສຳລັບໃຊ້ງານ [FaceRecon API](https://github.com/xang555/face_recon)
